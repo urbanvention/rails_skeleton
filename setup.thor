@@ -37,7 +37,6 @@ class Setup < Thor
   desc "git APP_NAME", "sets up the git repository"
   def git(appname)
     %x{git remote rename origin skeleton}
-
     repo = ask("Which repository (leave empty for default)? :")
     if repo == ""
       add_origin("git@uv:#{appname}.git")
