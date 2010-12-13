@@ -1,4 +1,6 @@
 PlanWe::Application.routes.draw do
+  devise_for :users
+
   # Offline Application Manifest File
   # match "/application.manifest" => Rails::Offline
 

@@ -9,6 +9,8 @@ gem "i18n-active_record",   :git => "git://github.com/svenfuchs/i18n-active_reco
 
 # Devise
 gem "devise",               :git => "git://github.com/plataformatec/devise.git"
+gem "devise_invitable",     :git => "git://github.com/scambra/devise_invitable.git"
+gem "cancan"
 gem "bcrypt-ruby"
 gem "oa-oauth",             :require => "omniauth/oauth"
 
