@@ -13,7 +13,7 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 
-RenameMePlz::Application.load_tasks
+PlanWe::Application.load_tasks
 
 # require 'thinking_sphinx'
 # require 'thinking_sphinx/tasks'

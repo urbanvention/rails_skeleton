@@ -1,4 +1,4 @@
-RenameMePlz::Application.routes.draw do
+PlanWe::Application.routes.draw do
   # Offline Application Manifest File
   # match "/application.manifest" => Rails::Offline
 
