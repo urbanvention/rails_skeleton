@@ -36,8 +36,7 @@ class Setup < Thor
 
   desc "git APP_NAME", "sets up the git repository"
   def git(appname)
-    %x{git remote rename origin skeleton}
-    %x{git branch "skeleton"}
+    setup_skeleton_branch
     %x{git commit -vm "renamed app"}
     repo = ask("Which repository (leave empty for default)? :")
     if repo == ""
@@ -67,6 +66,13 @@ class Setup < Thor
   end
 
   private
+
+  def setup_skeleton_branch
+    %x{git remote rename origin skeleton}
+    %x{git branch "skeleton"}
+    %x{git config branch.skeleton.remote skeleton}
+    %x{git config branch.skeleton.merge refs/heads/master}
+  end
 
   def camel_case str
     str.split(/_/).map(&:capitalize).join
