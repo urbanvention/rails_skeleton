@@ -19,7 +19,7 @@ class Setup < Thor
   method_options :from => "RenameMePlz"
   def rename(to)
     from = options[:from]
-    (Dir["config/**/*.rb"] + ["Rakefile"]).each do |source|
+    (Dir["config/**/*.rb"] + ["Rakefile","config.ru"]).each do |source|
       # in file editing like this:
       # %x{ruby -pi -e "gsub(/#{from}/, '#{to}')" #{source}}
       File.open(source, 'r+') do |f|
@@ -46,7 +46,7 @@ class Setup < Thor
       add_origin(repo,false)
     end
     push_to_master = ask("push to master? (no/yes)")
-    if push_to_master == "yes" %x{git push origin master}
+    %x{git push origin master} if push_to_master == "yes"
   end
 
   desc "app APP_NAME", "renames your app and creates a .rvmrc file for it"
